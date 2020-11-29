@@ -18,6 +18,7 @@ using namespace std;
 logstream outlog (cout);
 struct cxi_exit: public exception {};
 
+//code
 unordered_map<string,cxi_command> command_map {
    {"exit", cxi_command::EXIT},
    {"help", cxi_command::HELP},
