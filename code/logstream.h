@@ -1,4 +1,4 @@
-// $Id: logstream.h,v 1.2 2019-02-21 18:19:49-08 - - $
+// $Id: logstream.h,v 1.4 2020-11-19 14:34:47-08 - - $
 
 //
 // class logstream
@@ -22,16 +22,16 @@ using namespace std;
 
 class logstream {
    private:
-      ostream& out;
+      ostream& out_;
       string execname_;
    public:
 
       // Constructor may or may not have the execname available.
-      logstream (ostream& out_, const string& execname = ""):
-                 out (out_), execname_ (execname) {
+      logstream (ostream& out, const string& execname = ""):
+                 out_ (out), execname_ (execname) {
       }
 
-      // First line of main should execname if logstream is global.
+      // First line of main should set execname if logstream is global.
       void execname (const string& name) { execname_ = name; }
       string execname() { return execname_; }
 
@@ -40,8 +40,8 @@ class logstream {
       template <typename T>
       ostream& operator<< (const T& obj) {
          assert (execname_.size() > 0);
-         out << execname_ << "(" << getpid() << "): " << obj;
-         return out;
+         out_ << execname_ << "(" << getpid() << "): " << obj;
+         return out_;
       }
 
 };

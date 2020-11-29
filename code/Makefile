@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 2020-08-20 18:00:39-07 - - $
+# $Id: Makefile,v 1.18 2020-11-22 16:51:43-08 - - $
 
 MKFILE      = Makefile
 DEPFILE     = ${MKFILE}.dep
@@ -13,25 +13,25 @@ MAKEDEPCPP  = g++ -std=gnu++17 -MM ${GPPOPTS}
 UTILBIN     = /afs/cats.ucsc.edu/courses/cse111-wm/bin
 
 MODULES     = logstream protocol sockets
-EXECBINS    = cix cixd
+EXECBINS    = cxi cxid
 ALLMODS     = ${MODULES} ${EXECBINS}
 SOURCELIST  = ${foreach MOD, ${ALLMODS}, ${MOD}.h ${MOD}.tcc ${MOD}.cpp}
 CPPSOURCE   = ${wildcard ${MODULES:=.cpp} ${EXECBINS:=.cpp}}
 ALLSOURCE   = ${wildcard ${SOURCELIST}} ${MKFILE}
 CPPLIBS     = ${wildcard ${MODULES:=.cpp}}
 OBJLIBS     = ${CPPLIBS:.cpp=.o}
-CIXOBJS     = cix.o ${OBJLIBS}
-CIXDOBJS    = cixd.o ${OBJLIBS}
-CLEANOBJS   = ${OBJLIBS} ${CIXOBJS} ${CIXDOBJS}
+CXIOBJS     = cxi.o ${OBJLIBS}
+CXIDOBJS    = cxid.o ${OBJLIBS}
+CLEANOBJS   = ${OBJLIBS} ${CXIOBJS} ${CXIDOBJS}
 LISTING     = Listing.ps
 
 all: ${DEPFILE} ${EXECBINS}
 
-cix: ${CIXOBJS}
-	${COMPILECPP} -o $@ ${CIXOBJS}
+cxi: ${CXIOBJS}
+	${COMPILECPP} -o $@ ${CXIOBJS}
 
-cixd: ${CIXDOBJS}
-	${COMPILECPP} -o $@ ${CIXDOBJS}
+cxid: ${CXIDOBJS}
+	${COMPILECPP} -o $@ ${CXIDOBJS}
 
 %.o: %.cpp
 	- ${UTILBIN}/checksource $<

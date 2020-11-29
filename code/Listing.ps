@@ -3,7 +3,7 @@
 %%Title: ./Listing.ps
 %%For: Wesley Mackey
 %%Creator: GNU Enscript 1.6.6
-%%CreationDate: Sat Jul 18 23:33:55 2020
+%%CreationDate: Sun Nov 22 16:51:52 2020
 %%Orientation: Portrait
 %%Pages: (atend)
 %%DocumentMedia: Letter 612 792 0 () ()
@@ -533,9 +533,9 @@ _S
 /ftail (logstream.h) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/1) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -546,7 +546,7 @@ column_borders
 do_header
 32.4 694 M (1:) s
 52.2 694 M
-(// $Id: logstream.h,v 1.2 2019-02-21 18:19:49-08 - - $) s
+(// $Id: logstream.h,v 1.4 2020-11-19 14:34:47-08 - - $) s
 32.4 682 M (2:) s
 32.4 670 M (3:) s
 52.2 670 M
@@ -608,7 +608,7 @@ do_header
 (   private:) s
 25.8 406 M (25:) s
 52.2 406 M
-(      ostream& out;) s
+(      ostream& out_;) s
 25.8 394 M (26:) s
 52.2 394 M
 (      string execname_;) s
@@ -621,17 +621,17 @@ do_header
 (      // Constructor may or may not have the execname available.) s
 25.8 346 M (30:) s
 52.2 346 M
-(      logstream \(ostream& out_, const string& execname = ""\):) s
+(      logstream \(ostream& out, const string& execname = ""\):) s
 25.8 334 M (31:) s
 52.2 334 M
-(                 out \(out_\), execname_ \(execname\) {) s
+(                 out_ \(out\), execname_ \(execname\) {) s
 25.8 322 M (32:) s
 52.2 322 M
 (      }) s
 25.8 310 M (33:) s
 25.8 298 M (34:) s
 52.2 298 M
-(      // First line of main should execname if logstream is global.) s
+(      // First line of main should set execname if logstream is global.) s
 25.8 286 M (35:) s
 52.2 286 M
 (      void execname \(const string& name\) { execname_ = name; }) s
@@ -656,10 +656,10 @@ do_header
 (         assert \(execname_.size\(\) > 0\);) s
 25.8 190 M (43:) s
 52.2 190 M
-(         out << execname_ << "\(" << getpid\(\) << "\): " << obj;) s
+(         out_ << execname_ << "\(" << getpid\(\) << "\): " << obj;) s
 25.8 178 M (44:) s
 52.2 178 M
-(         return out;) s
+(         return out_;) s
 25.8 166 M (45:) s
 52.2 166 M
 (      }) s
@@ -684,9 +684,9 @@ _S
 /ftail (protocol.h) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/1) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -800,9 +800,9 @@ _S
 /ftail (protocol.cpp) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/2) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -962,9 +962,9 @@ _S
 /ftail (protocol.cpp) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/2) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1060,9 +1060,9 @@ _S
 /ftail (sockets.h) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1230,9 +1230,9 @@ _S
 /ftail (sockets.h) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1344,9 +1344,9 @@ _S
 /ftail (sockets.h) def
 % User defined strings:
 /pagenumstr (3) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1464,9 +1464,9 @@ _S
 /ftail (sockets.h) def
 % User defined strings:
 /pagenumstr (4) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1546,9 +1546,9 @@ _S
 /ftail (sockets.cpp) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1711,9 +1711,9 @@ _S
 /ftail (sockets.cpp) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1888,9 +1888,9 @@ _S
 /ftail (sockets.cpp) def
 % User defined strings:
 /pagenumstr (3) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -1989,9 +1989,9 @@ _S
 /ftail (sockets.cpp) def
 % User defined strings:
 /pagenumstr (4) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2142,14 +2142,14 @@ S
 _S
 38 24 translate
 /pagenum 1 def
-/fname (cix.cpp) def
+/fname (cxi.cpp) def
 /fdir (.) def
-/ftail (cix.cpp) def
+/ftail (cxi.cpp) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/3) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2160,7 +2160,7 @@ column_borders
 do_header
 32.4 694 M (1:) s
 52.2 694 M
-(// $Id: cix.cpp,v 1.10 2020-07-18 23:33:51-07 - - $) s
+(// $Id: cxi.cpp,v 1.1 2020-11-22 16:51:43-08 - - $) s
 32.4 682 M (2:) s
 32.4 670 M (3:) s
 52.2 670 M
@@ -2323,14 +2323,14 @@ S
 _S
 38 24 translate
 /pagenum 2 def
-/fname (cix.cpp) def
+/fname (cxi.cpp) def
 /fdir (.) def
-/ftail (cix.cpp) def
+/ftail (cxi.cpp) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/3) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2347,14 +2347,14 @@ S
 _S
 38 24 translate
 /pagenum 3 def
-/fname (cix.cpp) def
+/fname (cxi.cpp) def
 /fdir (.) def
-/ftail (cix.cpp) def
+/ftail (cxi.cpp) def
 % User defined strings:
 /pagenumstr (3) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/3) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2514,14 +2514,14 @@ S
 _S
 38 24 translate
 /pagenum 1 def
-/fname (cixd.cpp) def
+/fname (cxid.cpp) def
 /fdir (.) def
-/ftail (cixd.cpp) def
+/ftail (cxid.cpp) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2532,7 +2532,7 @@ column_borders
 do_header
 32.4 694 M (1:) s
 52.2 694 M
-(// $Id: cixd.cpp,v 1.9 2020-07-18 23:33:51-07 - - $) s
+(// $Id: cxid.cpp,v 1.1 2020-11-22 16:51:43-08 - - $) s
 32.4 682 M (2:) s
 32.4 670 M (3:) s
 52.2 670 M
@@ -2672,14 +2672,14 @@ S
 _S
 38 24 translate
 /pagenum 2 def
-/fname (cixd.cpp) def
+/fname (cxid.cpp) def
 /fdir (.) def
-/ftail (cixd.cpp) def
+/ftail (cxid.cpp) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2818,14 +2818,14 @@ S
 _S
 38 24 translate
 /pagenum 3 def
-/fname (cixd.cpp) def
+/fname (cxid.cpp) def
 /fdir (.) def
-/ftail (cixd.cpp) def
+/ftail (cxid.cpp) def
 % User defined strings:
 /pagenumstr (3) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -2917,14 +2917,14 @@ S
 _S
 38 24 translate
 /pagenum 4 def
-/fname (cixd.cpp) def
+/fname (cxid.cpp) def
 /fdir (.) def
-/ftail (cixd.cpp) def
+/ftail (cxid.cpp) def
 % User defined strings:
 /pagenumstr (4) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/4) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -3076,9 +3076,9 @@ _S
 /ftail (Makefile) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/2) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -3089,7 +3089,7 @@ column_borders
 do_header
 32.4 694 M (1:) s
 52.2 694 M
-(# $Id: Makefile,v 1.16 2019-11-06 14:10:27-08 - - $) s
+(# $Id: Makefile,v 1.18 2020-11-22 16:51:43-08 - - $) s
 32.4 682 M (2:) s
 32.4 670 M (3:) s
 52.2 670 M
@@ -3128,7 +3128,7 @@ do_header
 (MODULES     = logstream protocol sockets) s
 25.8 514 M (16:) s
 52.2 514 M
-(EXECBINS    = cix cixd) s
+(EXECBINS    = cxi cxid) s
 25.8 502 M (17:) s
 52.2 502 M
 (ALLMODS     = ${MODULES} ${EXECBINS}) s
@@ -3149,13 +3149,13 @@ do_header
 (OBJLIBS     = ${CPPLIBS:.cpp=.o}) s
 25.8 430 M (23:) s
 52.2 430 M
-(CIXOBJS     = cix.o ${OBJLIBS}) s
+(CXIOBJS     = cxi.o ${OBJLIBS}) s
 25.8 418 M (24:) s
 52.2 418 M
-(CIXDOBJS    = cixd.o ${OBJLIBS}) s
+(CXIDOBJS    = cxid.o ${OBJLIBS}) s
 25.8 406 M (25:) s
 52.2 406 M
-(CLEANOBJS   = ${OBJLIBS} ${CIXOBJS} ${CIXDOBJS}) s
+(CLEANOBJS   = ${OBJLIBS} ${CXIOBJS} ${CXIDOBJS}) s
 25.8 394 M (26:) s
 52.2 394 M
 (LISTING     = Listing.ps) s
@@ -3166,17 +3166,17 @@ do_header
 25.8 358 M (29:) s
 25.8 346 M (30:) s
 52.2 346 M
-(cix: ${CIXOBJS}) s
+(cxi: ${CXIOBJS}) s
 25.8 334 M (31:) s
 52.2 334 M
-(        ${COMPILECPP} -o $@ ${CIXOBJS}) s
+(        ${COMPILECPP} -o $@ ${CXIOBJS}) s
 25.8 322 M (32:) s
 25.8 310 M (33:) s
 52.2 310 M
-(cixd: ${CIXDOBJS}) s
+(cxid: ${CXIDOBJS}) s
 25.8 298 M (34:) s
 52.2 298 M
-(        ${COMPILECPP} -o $@ ${CIXDOBJS}) s
+(        ${COMPILECPP} -o $@ ${CXIDOBJS}) s
 25.8 286 M (35:) s
 25.8 274 M (36:) s
 52.2 274 M
@@ -3196,7 +3196,7 @@ do_header
 (ci: ${ALLSOURCE}) s
 25.8 202 M (42:) s
 52.2 202 M
-(        ${UTILBIN}/cid + ${ALLSOURCE}) s
+(        ${UTILBIN}/cid -is ${ALLSOURCE}) s
 25.8 190 M (43:) s
 52.2 190 M
 (        - ${UTILBIN}/checksource ${ALLSOURCE}) s
@@ -3237,9 +3237,9 @@ _S
 /ftail (Makefile) def
 % User defined strings:
 /pagenumstr (2) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/2) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -3254,7 +3254,7 @@ do_header
 (dep: ${ALLCPPSRC}) s
 25.8 670 M (57:) s
 52.2 670 M
-(        @ echo "# ${DEPFILE} created `LC_TIME=C date`" >${DEPFILE}) s
+(        @ echo "# ${DEPFILE} created $\(LC_TIME=C date\)" >${DEPFILE}) s
 25.8 658 M (58:) s
 52.2 658 M
 (        ${MAKEDEPCPP} ${CPPSOURCE} >>${DEPFILE}) s
@@ -3298,9 +3298,9 @@ _S
 /ftail (Makefile.dep) def
 % User defined strings:
 /pagenumstr (1) def
-/moddatestr (07/18/20) def
+/moddatestr (11/22/20) def
 /pagecountstr (/1) def
-/modtimestr (23:33:51) def
+/modtimestr (16:51:48) def
 /user_header_p true def
 /user_header_left_str ($cse111-wm/Assignments/asg4-client-server/code) def
 /user_header_center_str () def
@@ -3311,7 +3311,7 @@ column_borders
 do_header
 32.4 694 M (1:) s
 52.2 694 M
-(# Makefile.dep created Sat Jul 18 23:33:51 PDT 2020) s
+(# Makefile.dep created ) s
 32.4 682 M (2:) s
 52.2 682 M
 (protocol.o: protocol.cpp protocol.h sockets.h) s
@@ -3320,10 +3320,10 @@ do_header
 (sockets.o: sockets.cpp sockets.h) s
 32.4 658 M (4:) s
 52.2 658 M
-(cix.o: cix.cpp protocol.h sockets.h logstream.h) s
+(cxi.o: cxi.cpp protocol.h sockets.h logstream.h) s
 32.4 646 M (5:) s
 52.2 646 M
-(cixd.o: cixd.cpp protocol.h sockets.h logstream.h) s
+(cxid.o: cxid.cpp protocol.h sockets.h logstream.h) s
 _R
 S
 %%Trailer
