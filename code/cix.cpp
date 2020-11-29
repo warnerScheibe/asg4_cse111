@@ -1,26 +1,4 @@
-head	1.1;
-access;
-symbols;
-locks;
-comment	@// @;
-
-
-1.1
-date	2020.11.23.00.51.43;	author -;	state -;
-branches;
-next	;
-
-
-desc
-@@
-
-
-1.1
-log
-@-
-@
-text
-@// $Id: cix.cpp,v 1.10 2020-07-18 23:33:51-07 - - $
+// $Id: cix.cpp,v 1.10 2020-07-18 23:33:51-07 - - $
 
 #include <iostream>
 #include <memory>
@@ -40,6 +18,7 @@ using namespace std;
 logstream outlog (cout);
 struct cxi_exit: public exception {};
 
+//code
 unordered_map<string,cxi_command> command_map {
    {"exit", cxi_command::EXIT},
    {"help", cxi_command::HELP},
@@ -129,4 +108,3 @@ int main (int argc, char** argv) {
    return 0;
 }
 
-@

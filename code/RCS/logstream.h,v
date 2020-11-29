@@ -1,19 +1,9 @@
-head	1.4;
+head	1.2;
 access;
 symbols;
 locks;
 comment	@ * @;
 
-
-1.4
-date	2020.11.19.22.34.47;	author -;	state -;
-branches;
-next	1.3;
-
-1.3
-date	2020.11.19.21.49.14;	author -;	state -;
-branches;
-next	1.2;
 
 1.2
 date	2019.02.22.02.19.49;	author -;	state -;
@@ -30,12 +20,12 @@ desc
 @@
 
 
-1.4
+1.2
 log
 @-
 @
 text
-@// $Id: logstream.h,v 1.3 2020-11-19 13:49:14-08 - - $
+@// $Id: logstream.h,v 1.1 2015-05-12 18:48:40-07 - - $
 
 //
 // class logstream
@@ -59,16 +49,16 @@ using namespace std;
 
 class logstream {
    private:
-      ostream& out_;
+      ostream& out;
       string execname_;
    public:
 
       // Constructor may or may not have the execname available.
-      logstream (ostream& out, const string& execname = ""):
-                 out_ (out), execname_ (execname) {
+      logstream (ostream& out_, const string& execname = ""):
+                 out (out_), execname_ (execname) {
       }
 
-      // First line of main should set execname if logstream is global.
+      // First line of main should execname if logstream is global.
       void execname (const string& name) { execname_ = name; }
       string execname() { return execname_; }
 
@@ -77,50 +67,14 @@ class logstream {
       template <typename T>
       ostream& operator<< (const T& obj) {
          assert (execname_.size() > 0);
-         out_ << execname_ << "(" << getpid() << "): " << obj;
-         return out_;
+         out << execname_ << "(" << getpid() << "): " << obj;
+         return out;
       }
 
 };
 
 #endif
 
-@
-
-
-1.3
-log
-@-
-@
-text
-@d1 1
-a1 1
-// $Id: logstream.h,v 1.2 2019-02-21 18:19:49-08 - - $
-d34 1
-a34 1
-      // First line of main should execname if logstream is global.
-@
-
-
-1.2
-log
-@-
-@
-text
-@d1 1
-a1 1
-// $Id: logstream.h,v 1.1 2015-05-12 18:48:40-07 - - $
-d25 1
-a25 1
-      ostream& out;
-d30 2
-a31 2
-      logstream (ostream& out_, const string& execname = ""):
-                 out (out_), execname_ (execname) {
-d43 2
-a44 2
-         out << execname_ << "(" << getpid() << "): " << obj;
-         return out;
 @
 
 
